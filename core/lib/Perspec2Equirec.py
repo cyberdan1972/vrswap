@@ -2,7 +2,6 @@ import cv2
 import cupy as cp
 import cupyx.scipy.ndimage as ndi
 from functools import lru_cache
-import cupy as cp
 
 class Perspective:
     def __init__(self, img_name, FOV, THETA, PHI):
