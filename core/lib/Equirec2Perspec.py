@@ -2,6 +2,7 @@ import os
 import sys
 import cv2
 import numpy as np
+from numba import cuda
 
 class Equirectangular:
     def __init__(self, img_name):
