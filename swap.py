@@ -52,10 +52,8 @@ if os.name == "nt":
     sep = "\\"
 
 def resetDevice():
-    device = cuda.get_current_device()
-    device.reset()
-
-
+    cp.cuda.Device(0).reset()
+   
 def pre_check():
     if sys.version_info < (3, 9):
         quit('Python version is not supported - please upgrade to 3.9 or higher')
