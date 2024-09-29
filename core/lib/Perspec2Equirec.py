@@ -2,6 +2,7 @@ import cv2
 import cupy as cp
 import cupyx.scipy.ndimage as ndi
 from functools import lru_cache
+import cupy as cp
 
 class Perspective:
     def __init__(self, img_name, FOV, THETA, PHI):
@@ -68,5 +69,4 @@ class Perspective:
         return cp.asnumpy(persp), cp.asnumpy(mask)
 
     def resetDevice():
-        device = cuda.get_current_device()
-        device.reset()
+        cp.cuda.Device(0).reset()
